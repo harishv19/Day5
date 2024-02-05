@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                const resume = {
+        "name": "Harish",
+        "contact": {
+            "email": "Harish@gmail.com",
+            "phone": "738877475",
+            "address": "Chennai"
+        },
+        "summary": "Dedicated and experienced Full Stack Developer.",
+        "education": [
+            {
+            "degree": "Bachelor of Computer Application",
+            "school": "University of Madras",
+            "graduationYear": 2022
+            }
+        ],
+       
+        "skills": [
+            "JavaScript",
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Git",
+            
+        ],
+        "languages": [
+            "English (Fluent)",
+            "Tamil (Native)"
+        ],
+        "certifications": [
+            "Fullstack Cerification in GUVI",
+            
+        ],
+        "projects": [
+            {
+            "title": "E-commerce Platform",
+            "description": "Developed a scalable e-commerce platform with features such as product catalog, shopping cart, and user authentication.",
+            "technologies": ["React", "Node.js", "MongoDB"]
+            },
+        ],
+        
+        };
+
+        // Iterate over the resume sections using for loops
+        for (const section in resume) {
+        console.log(`=== ${section.toUpperCase()} ===`);
+
+        if (Array.isArray(resume[section])) {
+            // If the section is an array, iterate over its elements
+            for (const item of resume[section]) {
+            if (typeof item === 'object') {
+                // If the array element is an object, iterate over its properties
+                for (const key in item) {
+                console.log(`${key}: ${item[key]}`);
+                }
+                console.log('---');
+            } else {
+                console.log(item);
+            }
+            }
+            } else if (typeof resume[section] === 'object') {
+                // If the section is an object, iterate over its properties
+                for (const key in resume[section]) {
+                console.log(`${key}: ${resume[section][key]}`);
+                }
+            } else {
+                console.log(resume[section]);
+            }
+
+            console.log('\n');
+            }
+
+    </script>
+</body>
+</html>
